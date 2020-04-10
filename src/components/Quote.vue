@@ -1,11 +1,13 @@
 <template>
   <div>
-    <p>A wonderful quote</p>
+    <p>{{ quote }}</p>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["quote"]
+};
 </script>
 
 <style scoped>
