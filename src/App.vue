@@ -2,10 +2,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 vcenter">
-        <app-quote>
+        <button @click="selectedComponent = 'app-quote'">Select quote</button>
+        <button @click="selectedComponent = 'app-author'">Select author</button>
+        <hr />
+        <component :is="selectedComponent"></component>
+        <!-- <app-quote>
           <h2 slot="title">{{ quoteTitle }}</h2>
           <p slot="content">A wonderful quote!</p>
-        </app-quote>
+        </app-quote>-->
       </div>
     </div>
   </div>
@@ -13,15 +17,18 @@
 
 <script>
 import Quote from "./components/Quote.vue";
+import Author from "./components/Author.vue";
 
 export default {
   data() {
     return {
-      quoteTitle: "The quote"
+      quoteTitle: "The quote",
+      selectedComponent: "app-quote"
     };
   },
   components: {
-    "app-quote": Quote
+    "app-quote": Quote,
+    "app-author": Author
   }
 };
 </script>
