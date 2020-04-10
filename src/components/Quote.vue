@@ -2,6 +2,9 @@
   <div>
     <div class="title">
       <slot name="title"></slot>
+      <span>
+        <slot name="subtitle">The default subtitle</slot>
+      </span>
     </div>
     <hr />
     <div>
@@ -28,5 +31,10 @@ p {
 
 .title {
   margin-top: 75px;
+}
+
+span {
+  font-style: italic;
+  color: #666;
 }
 </style>
